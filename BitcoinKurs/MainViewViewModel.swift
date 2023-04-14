@@ -10,6 +10,7 @@ import SwiftUI
 final class MainViewViewModel: ObservableObject {
     @Published var changeValues: [CurrencyChangeEvent] = []
     @Published var lastUpdated: Date?
+    @Published var errorString: String?
     
     private let changeEventApiService: CoinGeckoApiService
     
@@ -17,14 +18,28 @@ final class MainViewViewModel: ObservableObject {
         self.changeEventApiService = changeEventApiService
     }
     
-    func onAppear() {
-        Task {
+    private func refreshDataAndUpdate() async {
+        do {
             let values = try await changeEventApiService.fetchBitcoinToEuro().reversed()
             
             DispatchQueue.main.async {
                 self.changeValues = Array(values)
                 self.lastUpdated = .now
             }
+        } catch {
+            DispatchQueue.main.async {
+                self.errorString = "an error occured: \(error)"
+            }
+        }
+    }
+    
+    func onRefresh() async {
+        await refreshDataAndUpdate()
+    }
+    
+    func onAppear() {
+        Task {
+            await refreshDataAndUpdate()
         }
     }
 }

@@ -32,6 +32,10 @@ struct MainView: View {
     
     var body: some View {
         VStack {
+            if let errorString = viewModel.errorString {
+                Text(errorString)
+                    .foregroundColor(.red)
+            }
             if let lastUpdatedString {
                 HStack {
                     Spacer()
@@ -45,6 +49,9 @@ struct MainView: View {
             )
         }
         .padding()
+        .refreshable {
+            await viewModel.onRefresh()
+        }
         .onAppear {
             viewModel.onAppear()
         }
