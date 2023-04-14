@@ -41,27 +41,33 @@ struct MainView: View {
                     .foregroundColor(.red)
             }
             HStack {
+                Text("Bitcoin Value")
+                    .font(.largeTitle)
                 Spacer()
-                if viewModel.isLoading {
-                    ProgressView()
-                }
+            }
+            HStack {
                 if let lastUpdatedString {
                     Text(lastUpdatedString)
                         .font(.footnote)
                         .foregroundColor(.gray)
                 }
+                if viewModel.isLoading {
+                    ProgressView()
+                        .padding(.leading, 16)
+                }
+                Spacer()
             }
             if let changeBatch = viewModel.changeBatch {
                 ChangeEventTable(
                     changeEvents: changeBatch.changeEvents,
                     currency: changeBatch.currency
                 )
+                .refreshable {
+                    await viewModel.onRefresh()
+                }
             }
         }
         .padding()
-        .refreshable {
-            await viewModel.onRefresh()
-        }
         .onAppear {
             viewModel.onAppear()
         }
