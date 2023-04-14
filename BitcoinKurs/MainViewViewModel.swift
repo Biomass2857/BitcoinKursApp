@@ -12,6 +12,8 @@ final class MainViewViewModel: ObservableObject {
     @Published var lastUpdated: Date?
     @Published var errorString: String?
     
+    private let updateInterval: TimeInterval = 10
+    private var timer: Timer?
     private let changeEventApiService: CoinGeckoApiService
     
     init(changeEventApiService: CoinGeckoApiService) {
@@ -35,11 +37,28 @@ final class MainViewViewModel: ObservableObject {
     
     func onRefresh() async {
         await refreshDataAndUpdate()
+        
+        DispatchQueue.main.async {
+            self.rescheduleContinousRefresh()
+        }
     }
     
     func onAppear() {
         Task {
             await refreshDataAndUpdate()
+        }
+        
+        DispatchQueue.main.async {
+            self.rescheduleContinousRefresh()
+        }
+    }
+    
+    private func rescheduleContinousRefresh() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true) { [weak self] _ in
+            Task { [weak self] in
+                await self?.refreshDataAndUpdate()
+            }
         }
     }
 }

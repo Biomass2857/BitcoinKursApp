@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FC9C6553-CC0C-4C52-8E1D-82D45C92C776"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "973B08AD-9C2F-42D7-9E6F-6A5D6666BD40"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BitcoinKurs/MainViewViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "rescheduleContinousRefresh()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "243FB94D-F998-4A6C-980A-E2C97503FD88"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BitcoinKurs/MainViewViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "rescheduleContinousRefresh()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "243FB94D-F998-4A6C-980A-E2C97503FD88 - 1e612db079adc70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BitcoinKurs.MainViewViewModel.rescheduleContinousRefresh() -&gt; ()"
+                  moduleName = "BitcoinKurs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomreinhardt/Documents/LearnProjects/BitcoinKurs/BitcoinKurs/MainViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "243FB94D-F998-4A6C-980A-E2C97503FD88 - ccedb0e18af87fb9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (__C.NSTimer) -&gt; () in BitcoinKurs.MainViewViewModel.rescheduleContinousRefresh() -&gt; ()"
+                  moduleName = "BitcoinKurs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomreinhardt/Documents/LearnProjects/BitcoinKurs/BitcoinKurs/MainViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C7536BDF-EE71-4865-AD2B-41AB694BB22D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BitcoinKurs/MainViewViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "rescheduleContinousRefresh()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "C7536BDF-EE71-4865-AD2B-41AB694BB22D - ccedb0e18af87f58"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (__C.NSTimer) -&gt; () in BitcoinKurs.MainViewViewModel.rescheduleContinousRefresh() -&gt; ()"
+                  moduleName = "BitcoinKurs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomreinhardt/Documents/LearnProjects/BitcoinKurs/BitcoinKurs/MainViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "C7536BDF-EE71-4865-AD2B-41AB694BB22D - 198e6222bfbef4e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; Swift.Optional&lt;()&gt; in closure #1 @Sendable (__C.NSTimer) -&gt; () in BitcoinKurs.MainViewViewModel.rescheduleContinousRefresh() -&gt; ()"
+                  moduleName = "BitcoinKurs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomreinhardt/Documents/LearnProjects/BitcoinKurs/BitcoinKurs/MainViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "C7536BDF-EE71-4865-AD2B-41AB694BB22D - eef9ef219232ca81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; Swift.Optional&lt;()&gt; in closure #1 @Sendable (__C.NSTimer) -&gt; () in BitcoinKurs.MainViewViewModel.rescheduleContinousRefresh() -&gt; ()"
+                  moduleName = "BitcoinKurs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomreinhardt/Documents/LearnProjects/BitcoinKurs/BitcoinKurs/MainViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
