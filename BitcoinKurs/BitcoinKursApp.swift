@@ -11,13 +11,7 @@ import SwiftUI
 struct BitcoinKursApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView(viewModel: mainViewViewModel)
+            MainView()
         }
-    }
-    
-    private var mainViewViewModel: MainViewViewModel {
-        let httpClient = DefaultHTTPClient()
-        let service = CoinGeckoApiService(httpClient: httpClient)
-        return MainViewViewModel(changeEventApiService: service)
     }
 }
