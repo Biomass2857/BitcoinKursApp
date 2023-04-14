@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E650711029E99B9100953A40 /* BitcoinKursApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650710F29E99B9100953A40 /* BitcoinKursApp.swift */; };
-		E650711229E99B9100953A40 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650711129E99B9100953A40 /* ContentView.swift */; };
+		E650711229E99B9100953A40 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650711129E99B9100953A40 /* MainView.swift */; };
 		E650711429E99B9200953A40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E650711329E99B9200953A40 /* Assets.xcassets */; };
 		E650711729E99B9200953A40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E650711629E99B9200953A40 /* Preview Assets.xcassets */; };
 		E650712129E99B9200953A40 /* BitcoinKursTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650712029E99B9200953A40 /* BitcoinKursTests.swift */; };
 		E650712B29E99B9200953A40 /* BitcoinKursUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650712A29E99B9200953A40 /* BitcoinKursUITests.swift */; };
 		E650712D29E99B9200953A40 /* BitcoinKursUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650712C29E99B9200953A40 /* BitcoinKursUITestsLaunchTests.swift */; };
+		E650713A29E99DA300953A40 /* CoinGeckoApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650713929E99DA300953A40 /* CoinGeckoApiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		E650710C29E99B9100953A40 /* BitcoinKurs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinKurs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E650710F29E99B9100953A40 /* BitcoinKursApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinKursApp.swift; sourceTree = "<group>"; };
-		E650711129E99B9100953A40 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E650711129E99B9100953A40 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E650711329E99B9200953A40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E650711629E99B9200953A40 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E650711C29E99B9200953A40 /* BitcoinKursTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinKursTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		E650712629E99B9200953A40 /* BitcoinKursUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinKursUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E650712A29E99B9200953A40 /* BitcoinKursUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinKursUITests.swift; sourceTree = "<group>"; };
 		E650712C29E99B9200953A40 /* BitcoinKursUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinKursUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E650713929E99DA300953A40 /* CoinGeckoApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGeckoApiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +97,10 @@
 			isa = PBXGroup;
 			children = (
 				E650710F29E99B9100953A40 /* BitcoinKursApp.swift */,
-				E650711129E99B9100953A40 /* ContentView.swift */,
+				E650711129E99B9100953A40 /* MainView.swift */,
 				E650711329E99B9200953A40 /* Assets.xcassets */,
 				E650711529E99B9200953A40 /* Preview Content */,
+				E650713929E99DA300953A40 /* CoinGeckoApiService.swift */,
 			);
 			path = BitcoinKurs;
 			sourceTree = "<group>";
@@ -257,7 +260,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E650711229E99B9100953A40 /* ContentView.swift in Sources */,
+				E650713A29E99DA300953A40 /* CoinGeckoApiService.swift in Sources */,
+				E650711229E99B9100953A40 /* MainView.swift in Sources */,
 				E650711029E99B9100953A40 /* BitcoinKursApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
