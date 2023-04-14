@@ -15,6 +15,9 @@
 		E650712B29E99B9200953A40 /* BitcoinKursUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650712A29E99B9200953A40 /* BitcoinKursUITests.swift */; };
 		E650712D29E99B9200953A40 /* BitcoinKursUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650712C29E99B9200953A40 /* BitcoinKursUITestsLaunchTests.swift */; };
 		E650713A29E99DA300953A40 /* CoinGeckoApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650713929E99DA300953A40 /* CoinGeckoApiService.swift */; };
+		E650713C29E9A31200953A40 /* DefaultHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650713B29E9A31200953A40 /* DefaultHTTPClient.swift */; };
+		E650713E29E9A32400953A40 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650713D29E9A32400953A40 /* HTTPClient.swift */; };
+		E650714029E9A33200953A40 /* CurrencyChangeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650713F29E9A33200953A40 /* CurrencyChangeEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		E650712A29E99B9200953A40 /* BitcoinKursUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinKursUITests.swift; sourceTree = "<group>"; };
 		E650712C29E99B9200953A40 /* BitcoinKursUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinKursUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E650713929E99DA300953A40 /* CoinGeckoApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGeckoApiService.swift; sourceTree = "<group>"; };
+		E650713B29E9A31200953A40 /* DefaultHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHTTPClient.swift; sourceTree = "<group>"; };
+		E650713D29E9A32400953A40 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		E650713F29E9A33200953A40 /* CurrencyChangeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChangeEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,9 @@
 				E650711329E99B9200953A40 /* Assets.xcassets */,
 				E650711529E99B9200953A40 /* Preview Content */,
 				E650713929E99DA300953A40 /* CoinGeckoApiService.swift */,
+				E650713B29E9A31200953A40 /* DefaultHTTPClient.swift */,
+				E650713D29E9A32400953A40 /* HTTPClient.swift */,
+				E650713F29E9A33200953A40 /* CurrencyChangeEvent.swift */,
 			);
 			path = BitcoinKurs;
 			sourceTree = "<group>";
@@ -261,7 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E650713A29E99DA300953A40 /* CoinGeckoApiService.swift in Sources */,
+				E650713E29E9A32400953A40 /* HTTPClient.swift in Sources */,
 				E650711229E99B9100953A40 /* MainView.swift in Sources */,
+				E650714029E9A33200953A40 /* CurrencyChangeEvent.swift in Sources */,
+				E650713C29E9A31200953A40 /* DefaultHTTPClient.swift in Sources */,
 				E650711029E99B9100953A40 /* BitcoinKursApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
