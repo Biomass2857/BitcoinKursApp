@@ -18,6 +18,7 @@
 		E650713C29E9A31200953A40 /* DefaultHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650713B29E9A31200953A40 /* DefaultHTTPClient.swift */; };
 		E650713E29E9A32400953A40 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650713D29E9A32400953A40 /* HTTPClient.swift */; };
 		E650714029E9A33200953A40 /* CurrencyChangeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650713F29E9A33200953A40 /* CurrencyChangeEvent.swift */; };
+		E650714229E9A39B00953A40 /* ChangeEventTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650714129E9A39B00953A40 /* ChangeEventTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		E650713B29E9A31200953A40 /* DefaultHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHTTPClient.swift; sourceTree = "<group>"; };
 		E650713D29E9A32400953A40 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		E650713F29E9A33200953A40 /* CurrencyChangeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChangeEvent.swift; sourceTree = "<group>"; };
+		E650714129E9A39B00953A40 /* ChangeEventTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEventTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				E650713B29E9A31200953A40 /* DefaultHTTPClient.swift */,
 				E650713D29E9A32400953A40 /* HTTPClient.swift */,
 				E650713F29E9A33200953A40 /* CurrencyChangeEvent.swift */,
+				E650714129E9A39B00953A40 /* ChangeEventTable.swift */,
 			);
 			path = BitcoinKurs;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				E650713E29E9A32400953A40 /* HTTPClient.swift in Sources */,
 				E650711229E99B9100953A40 /* MainView.swift in Sources */,
 				E650714029E9A33200953A40 /* CurrencyChangeEvent.swift in Sources */,
+				E650714229E9A39B00953A40 /* ChangeEventTable.swift in Sources */,
 				E650713C29E9A31200953A40 /* DefaultHTTPClient.swift in Sources */,
 				E650711029E99B9100953A40 /* BitcoinKursApp.swift in Sources */,
 			);

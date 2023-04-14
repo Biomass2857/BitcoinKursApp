@@ -32,8 +32,8 @@ struct CoinGeckoApiService {
         
         let queryItems = [
             URLQueryItem(name: "vs_currency", value: "eur"),
-            URLQueryItem(name: "days", value: "1"),
-            URLQueryItem(name: "interval", value: "weekly")
+            URLQueryItem(name: "days", value: "14"),
+            URLQueryItem(name: "interval", value: "daily")
         ]
         
         let urlWithQuery = url.appending(queryItems: queryItems)

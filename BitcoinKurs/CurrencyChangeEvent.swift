@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct CurrencyChangeEvent {
+struct CurrencyChangeEvent: Identifiable {
     let date: Date
     let factor: Double
+    
+    var id: Double {
+        date.timeIntervalSince1970
+    }
 }
