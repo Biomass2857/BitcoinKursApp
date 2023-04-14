@@ -11,7 +11,19 @@ import SwiftUI
 struct BitcoinKursApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            NavigationStack {
+                MainView()
+                    .toolbar(.visible, for: .navigationBar)
+                    .toolbar {
+                        NavigationLink(
+                            destination: SettingsPage(),
+                            label: {
+                                Label("Settings", systemImage: "gear")
+                                    .foregroundColor(.accentColor)
+                            }
+                        )
+                    }
+            }
         }
     }
 }

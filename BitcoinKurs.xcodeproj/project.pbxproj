@@ -20,6 +20,8 @@
 		E650714029E9A33200953A40 /* CurrencyChangeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650713F29E9A33200953A40 /* CurrencyChangeEvent.swift */; };
 		E650714229E9A39B00953A40 /* ChangeEventTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650714129E9A39B00953A40 /* ChangeEventTable.swift */; };
 		E650714429E9A96B00953A40 /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650714329E9A96B00953A40 /* MainViewViewModel.swift */; };
+		E650714C29E9B8B500953A40 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650714B29E9B8B500953A40 /* SettingsPage.swift */; };
+		E650714E29E9BBE200953A40 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650714D29E9BBE200953A40 /* AppSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		E650713F29E9A33200953A40 /* CurrencyChangeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChangeEvent.swift; sourceTree = "<group>"; };
 		E650714129E9A39B00953A40 /* ChangeEventTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEventTable.swift; sourceTree = "<group>"; };
 		E650714329E9A96B00953A40 /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
+		E650714B29E9B8B500953A40 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
+		E650714D29E9BBE200953A40 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 				E650713F29E9A33200953A40 /* CurrencyChangeEvent.swift */,
 				E650714129E9A39B00953A40 /* ChangeEventTable.swift */,
 				E650714329E9A96B00953A40 /* MainViewViewModel.swift */,
+				E650714B29E9B8B500953A40 /* SettingsPage.swift */,
+				E650714D29E9BBE200953A40 /* AppSettings.swift */,
 			);
 			path = BitcoinKurs;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E650714C29E9B8B500953A40 /* SettingsPage.swift in Sources */,
 				E650713A29E99DA300953A40 /* CoinGeckoApiService.swift in Sources */,
 				E650713E29E9A32400953A40 /* HTTPClient.swift in Sources */,
 				E650711229E99B9100953A40 /* MainView.swift in Sources */,
@@ -282,6 +289,7 @@
 				E650714229E9A39B00953A40 /* ChangeEventTable.swift in Sources */,
 				E650713C29E9A31200953A40 /* DefaultHTTPClient.swift in Sources */,
 				E650714429E9A96B00953A40 /* MainViewViewModel.swift in Sources */,
+				E650714E29E9BBE200953A40 /* AppSettings.swift in Sources */,
 				E650711029E99B9100953A40 /* BitcoinKursApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
