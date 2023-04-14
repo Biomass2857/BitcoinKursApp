@@ -15,48 +15,47 @@ struct CoinGeckoApiService {
         self.httpClient = httpClient
     }
     
-    enum CoinGeckoCurrency: String {
-        case euro
-        case dollar
-        case pound
-        case yen
-        case franc
-        
-        fileprivate var tickerString: String {
-            switch self {
-            case .euro:
-                return "eur"
-            case .dollar:
-                return "usd"
-            case .pound:
-                return "gbp"
-            case .yen:
-                return "jpy"
-            case .franc:
-                return "chf"
-            }
-        }
-    }
-    
     struct InvalidDataFormatError: Error {}
     struct InvalidEndpointURLError: Error {}
     
-    func fetchBitcoinToCurrencyChangeEvents(
-        currency: CoinGeckoCurrency = .euro
-    ) async throws -> [CurrencyChangeEvent] {
+    func fetchBitcoinChangeValueBatch(
+        currency: Currency = .euro
+    ) async throws -> CurrencyChangeEventBatch {
         let request = try makeRequest(for: currency)
         let response: CoinGeckoChangeResponse = try await httpClient.fetch(request: request)
         let events = try convertToChangeEvents(response: response)
-        return events
+        
+        let batch = CurrencyChangeEventBatch(
+            lastUpdated: .now,
+            currency: currency,
+            changeEvents: events
+        )
+        
+        return batch
     }
     
-    private func makeRequest(for currency: CoinGeckoCurrency) throws -> URLRequest {
+    private func getTickerString(for currency: Currency) -> String {
+        switch currency {
+        case .euro:
+            return "eur"
+        case .dollar:
+            return "usd"
+        case .pound:
+            return "gbp"
+        case .yen:
+            return "jpy"
+        case .franc:
+            return "chf"
+        }
+    }
+    
+    private func makeRequest(for currency: Currency) throws -> URLRequest {
         guard let url = URL(string: endpointURL) else {
             throw InvalidEndpointURLError()
         }
         
         let queryItems = [
-            URLQueryItem(name: "vs_currency", value: currency.tickerString),
+            URLQueryItem(name: "vs_currency", value: getTickerString(for: currency)),
             URLQueryItem(name: "days", value: "14"),
             URLQueryItem(name: "interval", value: "daily")
         ]

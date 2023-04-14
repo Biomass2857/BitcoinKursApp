@@ -8,18 +8,22 @@
 import SwiftUI
 
 final class MainViewViewModel: ObservableObject {
-    @Published var changeValues: [CurrencyChangeEvent] = []
-    @Published var lastUpdated: Date?
+    @Published var changeBatch: CurrencyChangeEventBatch?
     @Published var errorString: String?
     @Published var isLoading: Bool = false
     
     private let updateInterval: TimeInterval = 10
     private var timer: Timer?
     private let changeEventApiService: CoinGeckoApiService
+    private let changeEventPersistentStorage: CurrencyChangeEventStorage
     private let appSettings = AppSettings()
     
-    init(changeEventApiService: CoinGeckoApiService) {
+    init(
+        changeEventApiService: CoinGeckoApiService,
+        changeEventPersistentStorage: CurrencyChangeEventStorage
+    ) {
         self.changeEventApiService = changeEventApiService
+        self.changeEventPersistentStorage = changeEventPersistentStorage
     }
     
     var selectedCurrency: Currency {
@@ -27,7 +31,7 @@ final class MainViewViewModel: ObservableObject {
     }
     
     func onRefresh() async {
-        await refreshDataAndUpdate()
+        await refreshData()
         
         DispatchQueue.main.async {
             self.rescheduleContinousRefresh()
@@ -35,12 +39,28 @@ final class MainViewViewModel: ObservableObject {
     }
     
     func onAppear() {
-        Task {
-            await refreshDataAndUpdate()
-        }
+        initialLoadOfData()
         
         DispatchQueue.main.async {
             self.rescheduleContinousRefresh()
+        }
+    }
+    
+    private func initialLoadOfData() {
+        Task {
+            await refreshData()
+        }
+        
+        do {
+            let persistentStorageBatch = try changeEventPersistentStorage.loadBatch()
+            
+            DispatchQueue.main.async {
+                self.changeBatch = persistentStorageBatch
+            }
+        } catch let error {
+            DispatchQueue.main.async {
+                self.errorString = "\(error)"
+            }
         }
     }
     
@@ -48,27 +68,12 @@ final class MainViewViewModel: ObservableObject {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true) { [weak self] _ in
             Task { [weak self] in
-                await self?.refreshDataAndUpdate()
+                await self?.refreshData()
             }
         }
     }
     
-    private func convertToCoinGeckoCurrency(currency: Currency) -> CoinGeckoApiService.CoinGeckoCurrency {
-        switch currency {
-        case .euro:
-            return .euro
-        case .dollar:
-            return .dollar
-        case .pound:
-            return .pound
-        case .yen:
-            return .yen
-        case .franc:
-            return .franc
-        }
-    }
-    
-    private func refreshDataAndUpdate() async {
+    private func refreshData() async {
         defer {
             DispatchQueue.main.async {
                 self.isLoading = false
@@ -81,15 +86,15 @@ final class MainViewViewModel: ObservableObject {
         
         do {
             let selectedCurrency = appSettings.currency
-            let currencyToFetch = convertToCoinGeckoCurrency(currency: selectedCurrency)
             
-            let values = try await changeEventApiService.fetchBitcoinToCurrencyChangeEvents(
-                currency: currencyToFetch
+            let batch = try await changeEventApiService.fetchBitcoinChangeValueBatch(
+                currency: selectedCurrency
             )
             
+            changeEventPersistentStorage.saveBatch(batch: batch)
+            
             DispatchQueue.main.async {
-                self.changeValues = Array(values)
-                self.lastUpdated = .now
+                self.changeBatch = batch
             }
         } catch {
             DispatchQueue.main.async {

@@ -14,8 +14,8 @@
             filePath = "BitcoinKurs/MainViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "rescheduleContinousRefresh()"
             landmarkType = "9">
          </BreakpointContent>
@@ -30,13 +30,13 @@
             filePath = "BitcoinKurs/MainViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "rescheduleContinousRefresh()"
             landmarkType = "9">
             <Locations>
                <Location
-                  uuid = "243FB94D-F998-4A6C-980A-E2C97503FD88 - 1e612db079adc70"
+                  uuid = "243FB94D-F998-4A6C-980A-E2C97503FD88 - 1e612db079addc7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -46,12 +46,12 @@
                   urlString = "file:///Users/tomreinhardt/Documents/LearnProjects/BitcoinKurs/BitcoinKurs/MainViewViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
                   offsetFromSymbolStart = "136">
                </Location>
                <Location
-                  uuid = "243FB94D-F998-4A6C-980A-E2C97503FD88 - ccedb0e18af87fb9"
+                  uuid = "243FB94D-F998-4A6C-980A-E2C97503FD88 - ccedb0e18af87e0e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -61,8 +61,8 @@
                   urlString = "file:///Users/tomreinhardt/Documents/LearnProjects/BitcoinKurs/BitcoinKurs/MainViewViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
                   offsetFromSymbolStart = "112">
                </Location>
             </Locations>
@@ -78,13 +78,13 @@
             filePath = "BitcoinKurs/MainViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "rescheduleContinousRefresh()"
             landmarkType = "9">
             <Locations>
                <Location
-                  uuid = "C7536BDF-EE71-4865-AD2B-41AB694BB22D - ccedb0e18af87f58"
+                  uuid = "C7536BDF-EE71-4865-AD2B-41AB694BB22D - ccedb0e18af87e2d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -94,12 +94,12 @@
                   urlString = "file:///Users/tomreinhardt/Documents/LearnProjects/BitcoinKurs/BitcoinKurs/MainViewViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
                   offsetFromSymbolStart = "128">
                </Location>
                <Location
-                  uuid = "C7536BDF-EE71-4865-AD2B-41AB694BB22D - 198e6222bfbef4e3"
+                  uuid = "C7536BDF-EE71-4865-AD2B-41AB694BB22D - 198e6222bfbef596"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -109,12 +109,12 @@
                   urlString = "file:///Users/tomreinhardt/Documents/LearnProjects/BitcoinKurs/BitcoinKurs/MainViewViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
                   offsetFromSymbolStart = "68">
                </Location>
                <Location
-                  uuid = "C7536BDF-EE71-4865-AD2B-41AB694BB22D - eef9ef219232ca81"
+                  uuid = "C7536BDF-EE71-4865-AD2B-41AB694BB22D - eef9ef219232cbf4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -124,9 +124,57 @@
                   urlString = "file:///Users/tomreinhardt/Documents/LearnProjects/BitcoinKurs/BitcoinKurs/MainViewViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
                   offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C216FA40-2FD6-4A39-9973-3D5C2C92BC31"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BitcoinKurs/MainViewViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "initialLoadOfData()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "C216FA40-2FD6-4A39-9973-3D5C2C92BC31 - 9b5fc9360224abaf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BitcoinKurs.MainViewViewModel.initialLoadOfData() -&gt; ()"
+                  moduleName = "BitcoinKurs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomreinhardt/Documents/LearnProjects/BitcoinKurs/BitcoinKurs/MainViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "580">
+               </Location>
+               <Location
+                  uuid = "C216FA40-2FD6-4A39-9973-3D5C2C92BC31 - 441f3a6ab1dd08d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in BitcoinKurs.MainViewViewModel.initialLoadOfData() -&gt; ()"
+                  moduleName = "BitcoinKurs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomreinhardt/Documents/LearnProjects/BitcoinKurs/BitcoinKurs/MainViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "124">
                </Location>
             </Locations>
          </BreakpointContent>

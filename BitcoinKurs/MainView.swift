@@ -11,11 +11,15 @@ struct MainView: View {
     @StateObject var viewModel: MainViewViewModel = {
         let httpClient = DefaultHTTPClient()
         let service = CoinGeckoApiService(httpClient: httpClient)
-        return MainViewViewModel(changeEventApiService: service)
+        let persistentStorage = CurrencyChangeEventStorage.shared
+        return MainViewViewModel(
+            changeEventApiService: service,
+            changeEventPersistentStorage: persistentStorage
+        )
     }()
     
     private var lastUpdatedString: String? {
-        guard let lastUpdatedDate = viewModel.lastUpdated else {
+        guard let lastUpdatedDate = viewModel.changeBatch?.lastUpdated else {
             return nil
         }
         
@@ -36,21 +40,23 @@ struct MainView: View {
                 Text(errorString)
                     .foregroundColor(.red)
             }
-                HStack {
-                    Spacer()
-                    if viewModel.isLoading {
-                        ProgressView()
-                    }
-                    if let lastUpdatedString {
-                        Text(lastUpdatedString)
-                            .font(.footnote)
-                            .foregroundColor(.gray)
-                    }
+            HStack {
+                Spacer()
+                if viewModel.isLoading {
+                    ProgressView()
                 }
-            ChangeEventTable(
-                changeEvents: viewModel.changeValues,
-                currency: viewModel.selectedCurrency
-            )
+                if let lastUpdatedString {
+                    Text(lastUpdatedString)
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                }
+            }
+            if let changeBatch = viewModel.changeBatch {
+                ChangeEventTable(
+                    changeEvents: changeBatch.changeEvents,
+                    currency: changeBatch.currency
+                )
+            }
         }
         .padding()
         .refreshable {

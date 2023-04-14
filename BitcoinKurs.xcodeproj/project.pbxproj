@@ -23,6 +23,9 @@
 		E650714C29E9B8B500953A40 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650714B29E9B8B500953A40 /* SettingsPage.swift */; };
 		E650714E29E9BBE200953A40 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650714D29E9BBE200953A40 /* AppSettings.swift */; };
 		E650715029E9C1F300953A40 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650714F29E9C1F300953A40 /* Currency.swift */; };
+		E650715629E9C49C00953A40 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E650715429E9C49C00953A40 /* Model.xcdatamodeld */; };
+		E650715829E9CA0600953A40 /* CurrencyChangeEventStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650715729E9CA0600953A40 /* CurrencyChangeEventStorage.swift */; };
+		E650715C29E9D2C800953A40 /* CurrencyChangeEventBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E650715B29E9D2C800953A40 /* CurrencyChangeEventBatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		E650714B29E9B8B500953A40 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		E650714D29E9BBE200953A40 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		E650714F29E9C1F300953A40 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		E650715529E9C49C00953A40 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E650715729E9CA0600953A40 /* CurrencyChangeEventStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChangeEventStorage.swift; sourceTree = "<group>"; };
+		E650715B29E9D2C800953A40 /* CurrencyChangeEventBatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChangeEventBatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,9 @@
 				E650714B29E9B8B500953A40 /* SettingsPage.swift */,
 				E650714D29E9BBE200953A40 /* AppSettings.swift */,
 				E650714F29E9C1F300953A40 /* Currency.swift */,
+				E650715429E9C49C00953A40 /* Model.xcdatamodeld */,
+				E650715729E9CA0600953A40 /* CurrencyChangeEventStorage.swift */,
+				E650715B29E9D2C800953A40 /* CurrencyChangeEventBatch.swift */,
 			);
 			path = BitcoinKurs;
 			sourceTree = "<group>";
@@ -286,6 +295,7 @@
 			files = (
 				E650714C29E9B8B500953A40 /* SettingsPage.swift in Sources */,
 				E650713A29E99DA300953A40 /* CoinGeckoApiService.swift in Sources */,
+				E650715C29E9D2C800953A40 /* CurrencyChangeEventBatch.swift in Sources */,
 				E650713E29E9A32400953A40 /* HTTPClient.swift in Sources */,
 				E650711229E99B9100953A40 /* MainView.swift in Sources */,
 				E650714029E9A33200953A40 /* CurrencyChangeEvent.swift in Sources */,
@@ -294,7 +304,9 @@
 				E650713C29E9A31200953A40 /* DefaultHTTPClient.swift in Sources */,
 				E650714429E9A96B00953A40 /* MainViewViewModel.swift in Sources */,
 				E650714E29E9BBE200953A40 /* AppSettings.swift in Sources */,
+				E650715829E9CA0600953A40 /* CurrencyChangeEventStorage.swift in Sources */,
 				E650711029E99B9100953A40 /* BitcoinKursApp.swift in Sources */,
+				E650715629E9C49C00953A40 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +631,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E650715429E9C49C00953A40 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E650715529E9C49C00953A40 /* Model.xcdatamodel */,
+			);
+			currentVersion = E650715529E9C49C00953A40 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E650710429E99B9100953A40 /* Project object */;
 }
