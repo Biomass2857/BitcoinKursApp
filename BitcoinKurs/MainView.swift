@@ -36,14 +36,17 @@ struct MainView: View {
                 Text(errorString)
                     .foregroundColor(.red)
             }
-            if let lastUpdatedString {
                 HStack {
                     Spacer()
-                    Text(lastUpdatedString)
-                        .font(.footnote)
-                        .foregroundColor(.gray)
+                    if viewModel.isLoading {
+                        ProgressView()
+                    }
+                    if let lastUpdatedString {
+                        Text(lastUpdatedString)
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                    }
                 }
-            }
             ChangeEventTable(
                 changeEvents: viewModel.changeValues,
                 currency: viewModel.selectedCurrency

@@ -11,6 +11,7 @@ final class MainViewViewModel: ObservableObject {
     @Published var changeValues: [CurrencyChangeEvent] = []
     @Published var lastUpdated: Date?
     @Published var errorString: String?
+    @Published var isLoading: Bool = false
     
     private let updateInterval: TimeInterval = 10
     private var timer: Timer?
@@ -68,9 +69,20 @@ final class MainViewViewModel: ObservableObject {
     }
     
     private func refreshDataAndUpdate() async {
+        defer {
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
+        }
+        
+        DispatchQueue.main.async {
+            self.isLoading = true
+        }
+        
         do {
             let selectedCurrency = appSettings.currency
             let currencyToFetch = convertToCoinGeckoCurrency(currency: selectedCurrency)
+            
             let values = try await changeEventApiService.fetchBitcoinToCurrencyChangeEvents(
                 currency: currencyToFetch
             )
