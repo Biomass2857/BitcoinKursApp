@@ -14,10 +14,36 @@ struct MainView: View {
         return MainViewViewModel(changeEventApiService: service)
     }()
     
+    private var lastUpdatedString: String? {
+        guard let lastUpdatedDate = viewModel.lastUpdated else {
+            return nil
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .long
+        
+        guard let dateString = formatter.string(for: lastUpdatedDate) else {
+            return nil
+        }
+        
+        return "letzte Aktualisierung: " + dateString
+    }
+    
     var body: some View {
-        ChangeEventTable(
-            changeEvents: viewModel.changeValues
-        )
+        VStack {
+            if let lastUpdatedString {
+                HStack {
+                    Spacer()
+                    Text(lastUpdatedString)
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                }
+            }
+            ChangeEventTable(
+                changeEvents: viewModel.changeValues
+            )
+        }
         .padding()
         .onAppear {
             viewModel.onAppear()

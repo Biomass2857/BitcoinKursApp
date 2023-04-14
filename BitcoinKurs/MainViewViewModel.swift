@@ -9,6 +9,7 @@ import SwiftUI
 
 final class MainViewViewModel: ObservableObject {
     @Published var changeValues: [CurrencyChangeEvent] = []
+    @Published var lastUpdated: Date?
     
     private let changeEventApiService: CoinGeckoApiService
     
@@ -22,6 +23,7 @@ final class MainViewViewModel: ObservableObject {
             
             DispatchQueue.main.async {
                 self.changeValues = Array(values)
+                self.lastUpdated = .now
             }
         }
     }
