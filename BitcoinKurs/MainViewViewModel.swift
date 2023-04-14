@@ -15,24 +15,14 @@ final class MainViewViewModel: ObservableObject {
     private let updateInterval: TimeInterval = 10
     private var timer: Timer?
     private let changeEventApiService: CoinGeckoApiService
+    private let appSettings = AppSettings()
     
     init(changeEventApiService: CoinGeckoApiService) {
         self.changeEventApiService = changeEventApiService
     }
     
-    private func refreshDataAndUpdate() async {
-        do {
-            let values = try await changeEventApiService.fetchBitcoinToEuro().reversed()
-            
-            DispatchQueue.main.async {
-                self.changeValues = Array(values)
-                self.lastUpdated = .now
-            }
-        } catch {
-            DispatchQueue.main.async {
-                self.errorString = "an error occured: \(error)"
-            }
-        }
+    var selectedCurrency: Currency {
+        appSettings.currency
     }
     
     func onRefresh() async {
@@ -58,6 +48,40 @@ final class MainViewViewModel: ObservableObject {
         timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true) { [weak self] _ in
             Task { [weak self] in
                 await self?.refreshDataAndUpdate()
+            }
+        }
+    }
+    
+    private func convertToCoinGeckoCurrency(currency: Currency) -> CoinGeckoApiService.CoinGeckoCurrency {
+        switch currency {
+        case .euro:
+            return .euro
+        case .dollar:
+            return .dollar
+        case .pound:
+            return .pound
+        case .yen:
+            return .yen
+        case .franc:
+            return .franc
+        }
+    }
+    
+    private func refreshDataAndUpdate() async {
+        do {
+            let selectedCurrency = appSettings.currency
+            let currencyToFetch = convertToCoinGeckoCurrency(currency: selectedCurrency)
+            let values = try await changeEventApiService.fetchBitcoinToCurrencyChangeEvents(
+                currency: currencyToFetch
+            )
+            
+            DispatchQueue.main.async {
+                self.changeValues = Array(values)
+                self.lastUpdated = .now
+            }
+        } catch {
+            DispatchQueue.main.async {
+                self.errorString = "an error occured: \(error)"
             }
         }
     }

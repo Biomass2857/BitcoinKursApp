@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChangeEventTable: View {
     let changeEvents: [CurrencyChangeEvent]
+    let currency: Currency
     
     private func formattedDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -18,7 +19,7 @@ struct ChangeEventTable: View {
     }
     
     private func formattedChangeValue(value: Double) -> String {
-        String(format: "%.2f €", value)
+        String(format: "%.2f \(currency.symbol)", value)
     }
     
     var body: some View {
@@ -44,7 +45,8 @@ struct ChangeEventTable_Previews: PreviewProvider {
                     date: Date(timeIntervalSince1970: 0),
                     factor: 50
                 )
-            ]
+            ],
+            currency: .yen
         )
     }
 }

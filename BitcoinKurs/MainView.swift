@@ -45,7 +45,8 @@ struct MainView: View {
                 }
             }
             ChangeEventTable(
-                changeEvents: viewModel.changeValues
+                changeEvents: viewModel.changeValues,
+                currency: viewModel.selectedCurrency
             )
         }
         .padding()

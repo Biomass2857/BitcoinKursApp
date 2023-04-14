@@ -15,23 +15,48 @@ struct CoinGeckoApiService {
         self.httpClient = httpClient
     }
     
+    enum CoinGeckoCurrency: String {
+        case euro
+        case dollar
+        case pound
+        case yen
+        case franc
+        
+        fileprivate var tickerString: String {
+            switch self {
+            case .euro:
+                return "eur"
+            case .dollar:
+                return "usd"
+            case .pound:
+                return "gbp"
+            case .yen:
+                return "jpy"
+            case .franc:
+                return "chf"
+            }
+        }
+    }
+    
     struct InvalidDataFormatError: Error {}
     struct InvalidEndpointURLError: Error {}
     
-    func fetchBitcoinToEuro() async throws -> [CurrencyChangeEvent] {
-        let request = try makeRequest()
+    func fetchBitcoinToCurrencyChangeEvents(
+        currency: CoinGeckoCurrency = .euro
+    ) async throws -> [CurrencyChangeEvent] {
+        let request = try makeRequest(for: currency)
         let response: CoinGeckoChangeResponse = try await httpClient.fetch(request: request)
-        let result = try convertToChangeEvents(response: response)
-        return result
+        let events = try convertToChangeEvents(response: response)
+        return events
     }
     
-    private func makeRequest() throws -> URLRequest {
+    private func makeRequest(for currency: CoinGeckoCurrency) throws -> URLRequest {
         guard let url = URL(string: endpointURL) else {
             throw InvalidEndpointURLError()
         }
         
         let queryItems = [
-            URLQueryItem(name: "vs_currency", value: "eur"),
+            URLQueryItem(name: "vs_currency", value: currency.tickerString),
             URLQueryItem(name: "days", value: "14"),
             URLQueryItem(name: "interval", value: "daily")
         ]
