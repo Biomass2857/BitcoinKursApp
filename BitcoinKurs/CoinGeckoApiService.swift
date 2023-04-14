@@ -51,7 +51,7 @@ struct CoinGeckoApiService {
                 throw InvalidDataFormatError()
             }
             
-            let date = Date(timeIntervalSince1970: valuePair[0])
+            let date = Date(timeIntervalSince1970: valuePair[0] / 1000)
             let factor = valuePair[1]
             
             return CurrencyChangeEvent(

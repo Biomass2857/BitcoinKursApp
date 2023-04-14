@@ -15,14 +15,17 @@ struct DefaultHTTPClient: HTTPClient {
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 if let error {
                     continuation.resume(throwing: error)
+                    return
                 }
                 
                 if let data {
                     do {
                         let object = try JSONDecoder().decode(T.self, from: data)
                         continuation.resume(with: .success(object))
+                        return
                     } catch {
                         continuation.resume(throwing: error)
+                        return
                     }
                 }
                 
